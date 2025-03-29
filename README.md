@@ -1,12 +1,56 @@
-# React + Vite
+# Weather Dashboard Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Overview
+The Weather Dashboard is a React-based web application that allows users to search for weather details of any city. It provides real-time weather information using the OpenWeather API and includes a 5-day forecast. The app also features a dark mode toggle for better user experience.
 
-Currently, two official plugins are available:
+## Tech Stack
+- **Frontend**: React.js, Styled Components, Bootstrap
+- **API**: OpenWeather API
+- **State Management**: React useState & useEffect
+- **Styling**: Styled Components, Bootstrap
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Setup Instructions
+### Prerequisites
+- Node.js (>= 14.0)
+- npm or yarn
 
-## Expanding the ESLint configuration
+### Installation Steps
+1. Clone this repository:
+   ```sh
+   git clone https://github.com/your-username/weather-dashboard.git
+   cd weather-dashboard
+   ```
+2. Install dependencies:
+   ```sh
+   npm install
+   ```
+3. Create a `.env` file in the root directory and add your OpenWeather API key:
+   ```sh
+   VITE_API_KEY=36d22c703fc712eea077949b9d21fdbb
+   ```
+4. Start the development server:
+   ```sh
+   npm run dev
+   ```
+5. Open [http://localhost:5173](http://localhost:5173) in your browser.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## API Integration Details
+### OpenWeather API
+- Base URL: `https://api.openweathermap.org/data/2.5/`
+- Endpoints used:
+  - Current Weather: `/weather?q={city}&appid={API_KEY}&units=metric`
+  - 5-day Forecast: `/forecast?q={city}&appid={API_KEY}&units=metric`
+- **API Key Required**: Yes (Free tier available)
+- **Rate Limits**:
+  - Free Tier: **60 requests per minute**
+  - Paid plans available for higher limits ([Check Pricing](https://openweathermap.org/price))
+
+## Features
+- Search weather by city name
+- Display current temperature, humidity, and wind speed
+- Show a 5-day weather forecast
+- Recent search history
+- Dark mode toggle
+- Responsive design
+
+
